@@ -1,5 +1,6 @@
 package com.electronicstore.dtos;
 
+import com.electronicstore.validate.ImageNameValid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +30,8 @@ public class UserDto {
     private String about;
     @NotEmpty
     private String imageName;
-    @NotEmpty
+
+    @ImageNameValid
     private String email;
 
 
