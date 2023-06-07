@@ -1,0 +1,254 @@
+2023-06-06 17:19:19.658  INFO 4076 --- [restartedMain] c.e.ElectronicStoreApplication           : Starting ElectronicStoreApplication using Java 17.0.7 on DESKTOP-L8JR61R with PID 4076 (C:\Users\ADMIN\Desktop\Intellij idea\ElectronicStore\ElectronicStore\target\classes started by ADMIN in C:\Users\ADMIN\Desktop\Intellij idea\ElectronicStore)
+2023-06-06 17:19:19.687  INFO 4076 --- [restartedMain] c.e.ElectronicStoreApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-06-06 17:19:19.842  INFO 4076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-06 17:19:19.844  INFO 4076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-06 17:19:22.069  INFO 4076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-06 17:19:22.218  INFO 4076 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 1 JPA repository interfaces.
+2023-06-06 17:19:24.342  INFO 4076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7777 (http)
+2023-06-06 17:19:24.380  INFO 4076 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-06 17:19:24.409  INFO 4076 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 17:19:24.634  INFO 4076 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-06 17:19:24.635  INFO 4076 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4789 ms
+2023-06-06 17:19:25.036  INFO 4076 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-06 17:19:25.187  INFO 4076 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-06 17:19:25.664  INFO 4076 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-06 17:19:25.950  INFO 4076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-06 17:19:26.758  INFO 4076 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-06 17:19:26.800  INFO 4076 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-06 17:19:28.719  INFO 4076 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-06 17:19:28.736  INFO 4076 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-06 17:19:29.855  WARN 4076 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-06 17:19:30.748  INFO 4076 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-06 17:19:30.824  INFO 4076 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7777 (http) with context path ''
+2023-06-06 17:19:30.852  INFO 4076 --- [restartedMain] c.e.ElectronicStoreApplication           : Started ElectronicStoreApplication in 12.313 seconds (JVM running for 13.665)
+2023-06-06 17:20:11.259  INFO 4076 --- [http-nio-7777-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 17:20:11.260  INFO 4076 --- [http-nio-7777-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-06 17:20:11.263  INFO 4076 --- [http-nio-7777-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-06-06 17:20:11.776  INFO 4076 --- [http-nio-7777-exec-1] c.e.controller.UserController            : start the api method createUser in UserController : com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:11.777  INFO 4076 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Start the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:11.778  INFO 4076 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Convert Dto to User  in UserServiceImpl: com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:12.145  INFO 4076 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:12.148  INFO 4076 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Complated the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:12.148  INFO 4076 --- [http-nio-7777-exec-1] c.e.controller.UserController            : Complated the api method createUser in UserController : com.electronicstore.dtos.UserDto@642826a3
+2023-06-06 17:20:56.466  INFO 4076 --- [http-nio-7777-exec-4] c.e.controller.UserController            : start the api method createUser in UserController : com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:20:56.467  INFO 4076 --- [http-nio-7777-exec-4] c.e.serviceI.Impl.UserServiceImp         : Start the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:20:56.467  INFO 4076 --- [http-nio-7777-exec-4] c.e.serviceI.Impl.UserServiceImp         : Convert Dto to User  in UserServiceImpl: com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:20:56.484  INFO 4076 --- [http-nio-7777-exec-4] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:20:56.485  INFO 4076 --- [http-nio-7777-exec-4] c.e.serviceI.Impl.UserServiceImp         : Complated the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:20:56.486  INFO 4076 --- [http-nio-7777-exec-4] c.e.controller.UserController            : Complated the api method createUser in UserController : com.electronicstore.dtos.UserDto@69536511
+2023-06-06 17:21:34.363  INFO 4076 --- [http-nio-7777-exec-2] c.e.controller.UserController            : start the api method createUser in UserController : com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:21:34.364  INFO 4076 --- [http-nio-7777-exec-2] c.e.serviceI.Impl.UserServiceImp         : Start the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:21:34.364  INFO 4076 --- [http-nio-7777-exec-2] c.e.serviceI.Impl.UserServiceImp         : Convert Dto to User  in UserServiceImpl: com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:21:34.384  INFO 4076 --- [http-nio-7777-exec-2] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:21:34.385  INFO 4076 --- [http-nio-7777-exec-2] c.e.serviceI.Impl.UserServiceImp         : Complated the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:21:34.386  INFO 4076 --- [http-nio-7777-exec-2] c.e.controller.UserController            : Complated the api method createUser in UserController : com.electronicstore.dtos.UserDto@323194a4
+2023-06-06 17:22:23.205  INFO 4076 --- [http-nio-7777-exec-5] c.e.controller.UserController            : start the api method createUser in UserController : com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:22:23.207  INFO 4076 --- [http-nio-7777-exec-5] c.e.serviceI.Impl.UserServiceImp         : Start the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:22:23.207  INFO 4076 --- [http-nio-7777-exec-5] c.e.serviceI.Impl.UserServiceImp         : Convert Dto to User  in UserServiceImpl: com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:22:23.226  INFO 4076 --- [http-nio-7777-exec-5] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:22:23.229  INFO 4076 --- [http-nio-7777-exec-5] c.e.serviceI.Impl.UserServiceImp         : Complated the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:22:23.230  INFO 4076 --- [http-nio-7777-exec-5] c.e.controller.UserController            : Complated the api method createUser in UserController : com.electronicstore.dtos.UserDto@1b0ac497
+2023-06-06 17:23:11.446  INFO 4076 --- [http-nio-7777-exec-6] c.e.controller.UserController            : start the api method createUser in UserController : com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:11.447  INFO 4076 --- [http-nio-7777-exec-6] c.e.serviceI.Impl.UserServiceImp         : Start the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:11.447  INFO 4076 --- [http-nio-7777-exec-6] c.e.serviceI.Impl.UserServiceImp         : Convert Dto to User  in UserServiceImpl: com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:11.464  INFO 4076 --- [http-nio-7777-exec-6] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:11.465  INFO 4076 --- [http-nio-7777-exec-6] c.e.serviceI.Impl.UserServiceImp         : Complated the creating User in UserServiceImpl: com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:11.466  INFO 4076 --- [http-nio-7777-exec-6] c.e.controller.UserController            : Complated the api method createUser in UserController : com.electronicstore.dtos.UserDto@665571d5
+2023-06-06 17:23:22.042  INFO 4076 --- [http-nio-7777-exec-7] c.e.controller.UserController            : Start the api method getAllUser in UserController : {}
+2023-06-06 17:23:22.043  INFO 4076 --- [http-nio-7777-exec-7] c.e.serviceI.Impl.UserServiceImp         : Start the get All Users in UserServiceImpl: {}
+2023-06-06 17:23:22.331  INFO 4076 --- [http-nio-7777-exec-7] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto by using stream in UserServiceImpl: {}
+2023-06-06 17:23:22.338  INFO 4076 --- [http-nio-7777-exec-7] c.e.serviceI.Impl.UserServiceImp         : Complated the get single User in UserServiceImpl: {}
+2023-06-06 17:23:22.339  INFO 4076 --- [http-nio-7777-exec-7] c.e.controller.UserController            : Complated the api method getAllUser in UserController : {}
+2023-06-06 17:24:16.917  INFO 4076 --- [http-nio-7777-exec-8] c.e.controller.UserController            : start the api method updateUser in UserController : com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:16.917  INFO 4076 --- [http-nio-7777-exec-8] c.e.serviceI.Impl.UserServiceImp         : Start the update User in UserServiceImpl: com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:16.939  INFO 4076 --- [http-nio-7777-exec-8] c.e.serviceI.Impl.UserServiceImp         : Save updated user  in UserServiceImpl: com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:16.959  INFO 4076 --- [http-nio-7777-exec-8] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:16.960  INFO 4076 --- [http-nio-7777-exec-8] c.e.serviceI.Impl.UserServiceImp         : Complated the update User in UserServiceImpl: com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:16.961  INFO 4076 --- [http-nio-7777-exec-8] c.e.controller.UserController            : Complated the api method updateUser in UserController : com.electronicstore.dtos.UserDto@2ff5ee85
+2023-06-06 17:24:25.890 ERROR 4076 --- [http-nio-7777-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/1': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/1': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1266) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1048) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-06-06 17:24:36.308 ERROR 4076 --- [http-nio-7777-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/2c466e3e-fb02-44aa-8c24-b125c492e07b': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/2c466e3e-fb02-44aa-8c24-b125c492e07b': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1266) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1048) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-06-06 17:26:13.852 ERROR 4076 --- [http-nio-7777-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/60be8107-3881-4662-9f47-36cc4415dcb8': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}] with root cause
+
+java.lang.IllegalStateException: Ambiguous handler methods mapped for '/api/users/60be8107-3881-4662-9f47-36cc4415dcb8': {public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.findByEmail(java.lang.String), public org.springframework.http.ResponseEntity com.electronicstore.controller.UserController.getSingleUser(java.lang.String)}
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:432) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:383) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:125) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:67) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:498) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1266) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1048) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.27.jar:5.3.27]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623) ~[tomcat-embed-core-9.0.75.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.27.jar:5.3.27]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.75.jar:9.0.75]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2023-06-06 17:27:20.007  INFO 4076 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-06 17:27:20.016  INFO 4076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-06 17:27:20.040  INFO 4076 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-06 17:27:56.760  INFO 11068 --- [restartedMain] c.e.ElectronicStoreApplication           : Starting ElectronicStoreApplication using Java 17.0.7 on DESKTOP-L8JR61R with PID 11068 (C:\Users\ADMIN\Desktop\Intellij idea\ElectronicStore\ElectronicStore\target\classes started by ADMIN in C:\Users\ADMIN\Desktop\Intellij idea\ElectronicStore)
+2023-06-06 17:27:56.767  INFO 11068 --- [restartedMain] c.e.ElectronicStoreApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-06-06 17:27:56.930  INFO 11068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-06 17:27:56.931  INFO 11068 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-06 17:27:58.872  INFO 11068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-06 17:27:59.021  INFO 11068 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 1 JPA repository interfaces.
+2023-06-06 17:28:00.961  INFO 11068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7777 (http)
+2023-06-06 17:28:00.986  INFO 11068 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-06 17:28:00.988  INFO 11068 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+2023-06-06 17:28:01.225  INFO 11068 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-06 17:28:01.227  INFO 11068 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4294 ms
+2023-06-06 17:28:01.659  INFO 11068 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-06 17:28:01.797  INFO 11068 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-06 17:28:02.304  INFO 11068 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-06 17:28:02.656  INFO 11068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-06 17:28:03.536  INFO 11068 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-06 17:28:03.586  INFO 11068 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-06-06 17:28:05.523  INFO 11068 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-06 17:28:05.553  INFO 11068 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-06 17:28:06.639  WARN 11068 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-06 17:28:07.454  INFO 11068 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-06 17:28:07.528  INFO 11068 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7777 (http) with context path ''
+2023-06-06 17:28:07.551  INFO 11068 --- [restartedMain] c.e.ElectronicStoreApplication           : Started ElectronicStoreApplication in 11.943 seconds (JVM running for 13.465)
+2023-06-06 17:28:14.701  INFO 11068 --- [http-nio-7777-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-06 17:28:14.702  INFO 11068 --- [http-nio-7777-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-06 17:28:14.704  INFO 11068 --- [http-nio-7777-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-06-06 17:28:14.822  INFO 11068 --- [http-nio-7777-exec-1] c.e.controller.UserController            : start the api method getSingleUser in UserController : 60be8107-3881-4662-9f47-36cc4415dcb8
+2023-06-06 17:28:14.822  INFO 11068 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Start the get Single User in UserServiceImpl: 60be8107-3881-4662-9f47-36cc4415dcb8
+2023-06-06 17:28:15.008  INFO 11068 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Convert User to Dto  in UserServiceImpl: 60be8107-3881-4662-9f47-36cc4415dcb8
+2023-06-06 17:28:15.089  INFO 11068 --- [http-nio-7777-exec-1] c.e.serviceI.Impl.UserServiceImp         : Complated the get single User in UserServiceImpl: 60be8107-3881-4662-9f47-36cc4415dcb8
+2023-06-06 17:28:15.090  INFO 11068 --- [http-nio-7777-exec-1] c.e.controller.UserController            : Complated the api method getSingleUser in UserController : 60be8107-3881-4662-9f47-36cc4415dcb8
+2023-06-06 18:19:38.908  INFO 11068 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-06 18:19:38.970  INFO 11068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-06 18:19:39.017  INFO 11068 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
