@@ -4,6 +4,7 @@ import com.electronicstore.Config.AppConstatnt;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.entity.User;
 
+import com.electronicstore.exception.ResourceNotFoundException;
 import com.electronicstore.repository.UserRepo;
 import com.electronicstore.serviceI.UserServiceI;
 import org.modelmapper.ModelMapper;
@@ -67,7 +68,7 @@ public class UserServiceImp implements UserServiceI {
     public UserDto updateUser(UserDto userDto, String userId) {
 
         log.info("Start the update User in UserServiceImpl: {}", userDto, userId);
-        User user = this.userRepo.findById(userId).orElseThrow(() -> new RuntimeException(AppConstatnt.USER_NOTFOUNDEXCEPTION));
+        User user = this.userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException());
         user.setName(userDto.getName());
         user.setGender(userDto.getGender());
         user.setPassword(userDto.getPassword());
