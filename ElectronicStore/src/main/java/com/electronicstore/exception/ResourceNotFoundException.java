@@ -1,5 +1,6 @@
 package com.electronicstore.exception;
 
+import com.electronicstore.Config.AppConstatnt;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +10,7 @@ public class ResourceNotFoundException extends RuntimeException{
 
 
     public ResourceNotFoundException() {
-        super("Resource Not Found");
+        super(AppConstatnt.EXCEPTION_MESSAGE);
     }
 
     public ResourceNotFoundException(String message) {

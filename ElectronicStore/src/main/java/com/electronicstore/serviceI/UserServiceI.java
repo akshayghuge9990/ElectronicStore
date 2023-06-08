@@ -1,5 +1,6 @@
 package com.electronicstore.serviceI;
 
+import com.electronicstore.Config.UserResponse;
 import com.electronicstore.dtos.UserDto;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public interface UserServiceI {
 
     //getAll
 
-    List<UserDto> getAllUser();
+    UserResponse getAllUser(Integer pageNumber, Integer pageSize,String sortBy,String sortDir);
 
     //Delete
 

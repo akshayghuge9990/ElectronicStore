@@ -2,6 +2,7 @@ package com.electronicstore.controller;
 
 import com.electronicstore.Config.ApiResponse;
 import com.electronicstore.Config.AppConstatnt;
+import com.electronicstore.Config.UserResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.serviceI.UserServiceI;
 import org.slf4j.Logger;
@@ -90,18 +91,25 @@ public class UserController {
     /*
      * @author Akshay
      * @apiNote this api is  used to  getAllUser
-     * @param
-     * @param
-     * @return List<UserDto>
+     * @param pageNumber
+     * @param pageSize
+     * @param sortBy
+     * @param sortDir
+     * @return UserResponse
      */
 
 
     @GetMapping("/users")
-    public ResponseEntity<List<UserDto>> getAllUser() {
-        log.info("Start the api method getAllUser in UserController : {}");
-        List<UserDto> users = this.userServiceI.getAllUser();
-        log.info("Complated the api method getAllUser in UserController : {}");
-        return new ResponseEntity<List<UserDto>>(users, HttpStatus.OK);
+    public ResponseEntity<UserResponse> getAllUser(
+            @RequestParam(value = "pageNumber", defaultValue = AppConstatnt.PAGE_NUMBER, required = false) Integer pageNumber,
+            @RequestParam(value = "pageSize", defaultValue = AppConstatnt.PAGE_SIZE, required = false) Integer pageSize,
+            @RequestParam(value = "sortBy", defaultValue =AppConstatnt.SORT_BY,required = false) String sortBy,
+            @RequestParam (value = "sortDir",defaultValue = AppConstatnt.SORT_DIR,required = false)String sortDir
+    ) {
+        log.info("Start the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
+        UserResponse userResponse = this.userServiceI.getAllUser(pageNumber, pageSize,sortBy,sortDir);
+        log.info("Complated the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
+        return new ResponseEntity<UserResponse>(userResponse, HttpStatus.OK);
 
     }
 
@@ -117,14 +125,14 @@ public class UserController {
 
     @DeleteMapping("/users/{userId}")
     public ResponseEntity<ApiResponse> deleteUser(@PathVariable String userId) {
-        log.info("Start the api method deleteUser in UserController : {}");
+        log.info("Start the api method deleteUser in UserController : {}", userId);
         this.userServiceI.deleteUser(userId);
-        log.info("Complated the api method deleteUser in UserController : {}");
+        log.info("Complated the api method deleteUser in UserController : {}", userId);
         return new ResponseEntity<ApiResponse>(new ApiResponse(AppConstatnt.USER_DELETED, true), HttpStatus.OK);
 
 
     }
-     // get by email
+    // get by email
     /*
      * @author Akshay
      * @apiNote this api is  used to  findByEmail
@@ -143,7 +151,7 @@ public class UserController {
         return new ResponseEntity<UserDto>(userDto, HttpStatus.OK);
 
     }
-     //Search
+    //Search
 
     /*
      * @author Akshay
