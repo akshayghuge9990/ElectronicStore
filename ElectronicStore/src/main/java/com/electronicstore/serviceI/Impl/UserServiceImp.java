@@ -1,11 +1,11 @@
 package com.electronicstore.serviceI.Impl;
 
-import com.electronicstore.Config.AppConstatnt;
-import com.electronicstore.Config.UserResponse;
+import com.electronicstore.Config.PageableResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.entity.User;
 
 import com.electronicstore.exception.ResourceNotFoundException;
+import com.electronicstore.helper.Helper;
 import com.electronicstore.repository.UserRepo;
 import com.electronicstore.serviceI.UserServiceI;
 import org.modelmapper.ModelMapper;
@@ -115,34 +115,23 @@ public class UserServiceImp implements UserServiceI {
      */
 
     @Override
-    public UserResponse getAllUser(Integer pageNumber, Integer pageSize,String sortBy,String sortDir) {
+    public PageableResponse<UserDto> getAllUser(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
         log.info("Start the get All Users in UserServiceImpl: {}",pageNumber,pageSize,sortBy,sortDir);
 
         Sort sort =(sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
 
        log.info("we are create pagegination...UserServiceImpl :{}",pageNumber,pageSize,sortBy,sortDir);
+       //we are using -1 then start page is 0 and we are not using -1 then start the page no 1
         Pageable p = PageRequest.of(pageNumber, pageSize,sort);
 
-        Page<User> pageUser = this.userRepo.findAll(p);
+        Page<User> page = this.userRepo.findAll(p);
 
-        List<User> allUser = pageUser.getContent();
-
-        log.info("Convert User to Dto by using stream in UserServiceImpl: {}",pageNumber,pageSize,sortBy,sortDir);
-        List<UserDto> userDto = allUser.stream().map(user -> this.userToDto(user)).collect(Collectors.toList());
-
-        UserResponse userResponse = new UserResponse();
-
-        userResponse.setContent(userDto);
-        userResponse.setPageNumber(pageUser.getNumber());
-        userResponse.setPageSize(pageUser.getSize());
-        userResponse.setTotalElements(pageUser.getTotalElements());
-        userResponse.setTotalPages(pageUser.getTotalPages());
-        userResponse.setLastPage(pageUser.isLast());
+        PageableResponse<UserDto> response = Helper.getpagableResponse(page, UserDto.class);
 
 
         log.info("Complated the get single User in UserServiceImpl: {}",pageNumber,pageSize,sortBy,sortDir);
 
-        return userResponse;
+        return response;
     }
 
     /*

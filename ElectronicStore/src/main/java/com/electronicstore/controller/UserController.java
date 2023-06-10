@@ -2,7 +2,7 @@ package com.electronicstore.controller;
 
 import com.electronicstore.Config.ApiResponse;
 import com.electronicstore.Config.AppConstatnt;
-import com.electronicstore.Config.UserResponse;
+import com.electronicstore.Config.PageableResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.serviceI.UserServiceI;
 import org.slf4j.Logger;
@@ -100,16 +100,16 @@ public class UserController {
 
 
     @GetMapping("/users")
-    public ResponseEntity<UserResponse> getAllUser(
+    public ResponseEntity<PageableResponse<UserDto>> getAllUser(
             @RequestParam(value = "pageNumber", defaultValue = AppConstatnt.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = AppConstatnt.PAGE_SIZE, required = false) Integer pageSize,
             @RequestParam(value = "sortBy", defaultValue =AppConstatnt.SORT_BY,required = false) String sortBy,
             @RequestParam (value = "sortDir",defaultValue = AppConstatnt.SORT_DIR,required = false)String sortDir
     ) {
         log.info("Start the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
-        UserResponse userResponse = this.userServiceI.getAllUser(pageNumber, pageSize,sortBy,sortDir);
+        PageableResponse userResponse = this.userServiceI.getAllUser(pageNumber, pageSize,sortBy,sortDir);
         log.info("Complated the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
-        return new ResponseEntity<UserResponse>(userResponse, HttpStatus.OK);
+        return new ResponseEntity<PageableResponse<UserDto>>(userResponse, HttpStatus.OK);
 
     }
 
