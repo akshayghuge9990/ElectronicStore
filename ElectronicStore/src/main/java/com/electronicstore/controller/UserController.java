@@ -2,17 +2,22 @@ package com.electronicstore.controller;
 
 import com.electronicstore.Config.ApiResponse;
 import com.electronicstore.Config.AppConstatnt;
+import com.electronicstore.Config.ImageResponse;
 import com.electronicstore.Config.PageableResponse;
 import com.electronicstore.dtos.UserDto;
+import com.electronicstore.serviceI.FileServiceI;
 import com.electronicstore.serviceI.UserServiceI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -23,6 +28,13 @@ public class UserController {
 
     @Autowired
     private UserServiceI userServiceI;
+
+    @Autowired
+    private FileServiceI fileServiceI;
+
+    @Value("${user.profile.image.path}")
+    private String imageUploadPath;
+
 
 //create User
 
@@ -103,12 +115,12 @@ public class UserController {
     public ResponseEntity<PageableResponse<UserDto>> getAllUser(
             @RequestParam(value = "pageNumber", defaultValue = AppConstatnt.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = AppConstatnt.PAGE_SIZE, required = false) Integer pageSize,
-            @RequestParam(value = "sortBy", defaultValue =AppConstatnt.SORT_BY,required = false) String sortBy,
-            @RequestParam (value = "sortDir",defaultValue = AppConstatnt.SORT_DIR,required = false)String sortDir
+            @RequestParam(value = "sortBy", defaultValue = AppConstatnt.SORT_BY, required = false) String sortBy,
+            @RequestParam(value = "sortDir", defaultValue = AppConstatnt.SORT_DIR, required = false) String sortDir
     ) {
-        log.info("Start the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
-        PageableResponse userResponse = this.userServiceI.getAllUser(pageNumber, pageSize,sortBy,sortDir);
-        log.info("Complated the api method getAllUser in UserController : {}", pageNumber, pageSize,sortBy,sortDir);
+        log.info("Start the api method getAllUser in UserController : {}", pageNumber, pageSize, sortBy, sortDir);
+        PageableResponse userResponse = this.userServiceI.getAllUser(pageNumber, pageSize, sortBy, sortDir);
+        log.info("Complated the api method getAllUser in UserController : {}", pageNumber, pageSize, sortBy, sortDir);
         return new ResponseEntity<PageableResponse<UserDto>>(userResponse, HttpStatus.OK);
 
     }
@@ -170,6 +182,32 @@ public class UserController {
         return new ResponseEntity<List<UserDto>>(result, HttpStatus.OK);
 
     }
+
+
+    //upload user image
+
+    @PostMapping("/users/image/{userId}")
+    public ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("userImage") MultipartFile image, @PathVariable String userId) throws IOException {
+
+        String imageName = fileServiceI.uploadFile(image, imageUploadPath);
+
+        UserDto user = userServiceI.getUserById(userId);
+
+        user.setImageName(imageName);
+
+        UserDto userDto = userServiceI.updateUser(user, userId);
+
+        ImageResponse imageResponse = ImageResponse.builder().imageName(imageName).success(true).status(HttpStatus.CREATED).build();
+
+        return new ResponseEntity<>(imageResponse, HttpStatus.CREATED);
+
+    }
+
+
+    //server User Image
+
+
+
 
 
 }

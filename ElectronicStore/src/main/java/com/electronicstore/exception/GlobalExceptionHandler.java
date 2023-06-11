@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
      log.info("Start the resourceNotFoundException in GlobalExceptionHandler: {} ",ex);
     String message = ex.getMessage();
 
-    ApiResponse apiResponse = new ApiResponse(message,false);
+    ApiResponse apiResponse = new ApiResponse(message,true);
         log.info("Completed the resourceNotFoundException in GlobalExceptionHandler: {} ",ex);
     return new ResponseEntity<>(apiResponse, HttpStatus.NOT_FOUND);
 }
@@ -59,6 +59,16 @@ public class GlobalExceptionHandler {
     return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
 
 }
+
+    @ExceptionHandler(BadApiRequestException.class)
+    public ResponseEntity<ApiResponse> handleBadApiRequest(BadApiRequestException ex) {
+        log.info("Start the BadApiRequest in GlobalExceptionHandler: {} ",ex);
+        String message = ex.getMessage();
+
+        ApiResponse apiResponse = new ApiResponse(message,false);
+        log.info("Completed the BadApiRequest in GlobalExceptionHandler: {} ",ex);
+        return new ResponseEntity<>(apiResponse, HttpStatus.BAD_REQUEST);
+    }
 
 
 
