@@ -27,8 +27,8 @@ public class FileServiceImp implements FileServiceI {
     @Override
     public String uploadFile(MultipartFile file, String path) throws IOException {
 
+        log.info("Start the uploadFile in FileServiceImpl: {}", file, path);
         String originalFilename = file.getOriginalFilename();
-        log.info("Start the uploadFile in UserServiceImpl: {}", file, path);
         String filename = UUID.randomUUID().toString();
         String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
         String fileNameWithExtension = filename + extension;
@@ -60,14 +60,22 @@ public class FileServiceImp implements FileServiceI {
 
         } else {
             throw new BadApiRequestException("File with this " + extension + "not allowed !!");
-        }
 
+        }
 
     }
 
+    /*
+     * @author Akshay
+     *
+     * @apiNote this method is FileServiceImp of getResource
+     *
+     * @return InputStream
+     */
+
     @Override
     public InputStream getResource(String path, String name) throws FileNotFoundException {
-
+        log.info("Start the uploadFile in FileServiceImpl: {}",path, name);
         String fullPath = path+File.separator+name;
 
         InputStream inputStream = new FileInputStream(fullPath);
