@@ -17,13 +17,15 @@ public class FileServiceImp implements FileServiceI {
 
     private static final Logger log = LoggerFactory.getLogger(FileServiceImp.class);
 
-    /*
-     * @author Akshay
+
+    /**@apiNote this method is implementation of upload file
      *
-     * @apiNote this method is FileServiceImp of uploadFile
-     *
+     * @param file
+     * @param path
      * @return String
+     * @throws IOException
      */
+
     @Override
     public String uploadFile(MultipartFile file, String path) throws IOException {
 
@@ -73,6 +75,14 @@ public class FileServiceImp implements FileServiceI {
      * @return InputStream
      */
 
+    /**@apiNote this method is implementation of get Resource
+     *
+     * @param path
+     * @param name
+     * @return
+     * @throws FileNotFoundException
+     */
+
     @Override
     public InputStream getResource(String path, String name) throws FileNotFoundException {
         log.info("Start the uploadFile in FileServiceImpl: {}",path, name);
@@ -80,6 +90,7 @@ public class FileServiceImp implements FileServiceI {
 
         InputStream inputStream = new FileInputStream(fullPath);
 
+        log.info("Completed the uploadFile in FileServiceImpl: {}",path, name);
         return inputStream;
     }
 }

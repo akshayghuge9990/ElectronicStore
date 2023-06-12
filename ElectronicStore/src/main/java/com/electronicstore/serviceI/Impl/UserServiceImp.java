@@ -34,11 +34,10 @@ public class UserServiceImp implements UserServiceI {
     @Autowired
     private ModelMapper modelMapper;
 
-    /*
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of create user
-     *
+     * @param userDto
      * @return UserDto
      */
 
@@ -61,11 +60,12 @@ public class UserServiceImp implements UserServiceI {
         return userDto1;
     }
 
-    /*
+
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of Update user
-     *
+     * @param userDto
+     * @param userId
      * @return UserDto
      */
 
@@ -89,13 +89,13 @@ public class UserServiceImp implements UserServiceI {
         return userDto1;
     }
 
-    /*
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of get Single  user
-     *
+     * @param userId
      * @return UserDto
      */
+
     @Override
     public UserDto getUserById(String userId) {
         log.info("Start the get Single User in UserServiceImpl: {}", userId);
@@ -106,12 +106,14 @@ public class UserServiceImp implements UserServiceI {
         return userDto;
     }
 
-    /*
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of get All  users
-     *
-     * @return UserResponse
+     * @param pageNumber
+     * @param pageSize
+     * @param sortBy
+     * @param sortDir
+     * @return PageableResponse<UserDto>
      */
 
     @Override
@@ -134,12 +136,10 @@ public class UserServiceImp implements UserServiceI {
         return response;
     }
 
-    /*
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of delete user
-     *
-     * @return
+     * @param userId
      */
 
 
@@ -152,11 +152,11 @@ public class UserServiceImp implements UserServiceI {
 
     }
 
-    /*
+
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of get user By Email
-     *
+     * @param email
      * @return UserDto
      */
 
@@ -172,11 +172,11 @@ public class UserServiceImp implements UserServiceI {
     }
 
 
-    /*
+
+    /**
      * @author Akshay
-     *
      * @apiNote this method is implementation of search User
-     *
+     * @param keyword
      * @return List<UserDto>
      */
 

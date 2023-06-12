@@ -15,5 +15,10 @@ public class AppConstatnt {
 
     public static final String SORT_DIR = "asc";
 
+    public static final String CATEGORY_DELETED = "Category deleted successfully";
+
+    public static final String SORT_BY1 = "categoryId";
+
+
 
 }

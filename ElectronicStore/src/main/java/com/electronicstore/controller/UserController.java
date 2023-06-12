@@ -38,11 +38,11 @@ public class UserController {
 
 //create User
 
-    /*
+
+    /**
      * @author Akshay
-     * @apiNote this api is  used to  createUser
+     * @apiNote this api is  used to  create User
      * @param userDto
-     * @param
      * @return UserDto
      */
 
@@ -60,9 +60,9 @@ public class UserController {
 
     // update User
 
-    /*
+    /**
      * @author Akshay
-     * @apiNote this api is  used to  updateUser
+     * @apiNote this api is  used to  update User
      * @param userDto
      * @param userId
      * @return UserDto
@@ -80,10 +80,10 @@ public class UserController {
     }
 
     //Get Single User
-    /*
+
+    /**
      * @author Akshay
      * @apiNote this api is  used to  getSingleUser
-     * @param
      * @param userId
      * @return UserDto
      */
@@ -100,7 +100,7 @@ public class UserController {
 
     // Get All User
 
-    /*
+    /**
      * @author Akshay
      * @apiNote this api is  used to  getAllUser
      * @param pageNumber
@@ -127,11 +127,10 @@ public class UserController {
 
     //Delete
 
-    /*
+    /**
      * @author Akshay
-     * @apiNote this api is  used to  deleteUser
+     * @apiNote this api is  used to  delete User
      * @param userId
-     * @param
      * @return ApiResponse
      */
 
@@ -144,14 +143,15 @@ public class UserController {
 
 
     }
-    // get by email
-    /*
+
+    //find by email
+    /**
      * @author Akshay
-     * @apiNote this api is  used to  findByEmail
+     * @apiNote this api is  used to  find By Email
      * @param email
-     * @param
      * @return UserDto
      */
+
 
     @GetMapping("/users/{email}")
     public ResponseEntity<UserDto> findByEmail(@PathVariable String email) {
@@ -165,11 +165,10 @@ public class UserController {
     }
     //Search
 
-    /*
+    /**
      * @author Akshay
-     * @apiNote this api is  used to  searchName
+     * @apiNote this api is  used to  search Name
      * @param keyword
-     * @param
      * @return List<UserDto>
      */
 
@@ -186,9 +185,19 @@ public class UserController {
 
     //upload user image
 
+    /**
+     * @author Akshay
+     * @apiNote this api is  used to upload user image
+     * @param image
+     * @param userId
+     * @return ImageResponse
+     * @throws IOException
+     */
+
     @PostMapping("/users/image/{userId}")
     public ResponseEntity<ImageResponse> uploadUserImage(@RequestParam("userImage") MultipartFile image, @PathVariable String userId) throws IOException {
 
+        log.info("Start the api method upload image in UserController : {}",image,userId);
         String imageName = fileServiceI.uploadFile(image, imageUploadPath);
 
         UserDto user = userServiceI.getUserById(userId);
@@ -199,12 +208,10 @@ public class UserController {
 
         ImageResponse imageResponse = ImageResponse.builder().imageName(imageName).success(true).status(HttpStatus.CREATED).build();
 
+        log.info("Completed the api method upload image in UserController : {}",image,userId);
         return new ResponseEntity<>(imageResponse, HttpStatus.CREATED);
 
     }
-
-
-    //server User Image
 
 
 

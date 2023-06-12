@@ -3,6 +3,8 @@ package com.electronicstore.serviceI;
 import com.electronicstore.Config.PageableResponse;
 import com.electronicstore.dtos.CategoryDto;
 
+import java.util.List;
+
 public interface CategoryServiceI {
 
 
@@ -13,7 +15,7 @@ public interface CategoryServiceI {
 
     //update
 
-   CategoryDto updateCategory(CategoryDto categoryDto,String categoryId);
+    CategoryDto updateCategory(CategoryDto categoryDto, String categoryId);
 
 
     //getSingleCategory
@@ -21,10 +23,9 @@ public interface CategoryServiceI {
     CategoryDto getSingleCategory(String categoryId);
 
 
-
     //getAllCategory
 
-    PageableResponse<CategoryDto> getAllCatogory();
+    PageableResponse<CategoryDto> getAllCatogory(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
 
     //Delete
@@ -34,10 +35,7 @@ public interface CategoryServiceI {
 
     //Search
 
-
-
-
-
+    List<CategoryDto> searchCategory(String keyword);
 
 
 }
