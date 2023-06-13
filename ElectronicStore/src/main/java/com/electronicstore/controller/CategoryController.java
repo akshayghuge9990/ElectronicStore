@@ -141,7 +141,7 @@ public class CategoryController {
      */
 
 @GetMapping("/category/serach/{keyword}")
-    public ResponseEntity<List<CategoryDto>>searchTitle(@PathVariable("keyword") String keyword) {
+    public ResponseEntity<List<CategoryDto>>searchTitle(@PathVariable String keyword) {
 
         List<CategoryDto> categoryDtoList = this.categoryServiceI.searchCategory(keyword);
 
