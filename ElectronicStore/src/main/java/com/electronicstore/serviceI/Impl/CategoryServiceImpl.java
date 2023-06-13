@@ -115,6 +115,7 @@ public class CategoryServiceImpl implements CategoryServiceI {
 
         Page<Category> page = this.categoryRepo.findAll(p);
 
+        log.info("Convert the Category to CategoryDto in CategoryServiceImpl: {}",pageNumber,pageSize,sortBy,sortDir);
         PageableResponse<CategoryDto> response = Helper.getpagableResponse(page,CategoryDto.class);
 
         log.info("Completed the get All Category in CategoryServiceImpl: {}",pageNumber,pageSize,sortBy,sortDir);
