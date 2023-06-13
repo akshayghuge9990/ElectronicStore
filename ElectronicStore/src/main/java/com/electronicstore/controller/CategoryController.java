@@ -1,22 +1,18 @@
 package com.electronicstore.controller;
 
+
+import com.electronicstore.dtos.CategoryDto;
 import com.electronicstore.model.ApiResponse;
 import com.electronicstore.model.AppConstatnt;
-import com.electronicstore.model.ImageResponse;
 import com.electronicstore.model.PageableResponse;
-import com.electronicstore.dtos.CategoryDto;
 import com.electronicstore.serviceI.CategoryServiceI;
-import com.electronicstore.serviceI.FileServiceI;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -28,10 +24,6 @@ public class CategoryController {
 
     @Autowired
     private CategoryServiceI categoryServiceI;
-    @Autowired
-    private FileServiceI fileServiceI;
-    @Value("${category.profile.image.path}")
-    private String ImageUploadPath;
 
 
     //createCategory
@@ -151,41 +143,11 @@ public class CategoryController {
 
     @GetMapping("/category/serach/{keyword}")
     public ResponseEntity<List<CategoryDto>> searchTitle(@PathVariable String keyword) {
-
-         log.info("Start the api method  upload Images in CategoryController : {}",keyword);
+        log.info("Start the api method search Category category in CategoryController : {}", keyword);
         List<CategoryDto> categoryDtoList = this.categoryServiceI.searchCategory(keyword);
-
-        log.info("Completed the api method  upload Images in CategoryController : {}",keyword);
+        log.info("Completed the api method search Category category in CategoryController : {}", keyword);
         return new ResponseEntity<List<CategoryDto>>(categoryDtoList, HttpStatus.OK);
 
-
-    }
-
-    /**
-     * @apiNote this api is  used to uploadCategoryImages
-     * @author Akshay
-     * @param image
-     * @param categoryId
-     * @return ImageResponse
-     * @throws IOException
-     */
-
-
-    @PostMapping("/image/{categoryId}")
-    public ResponseEntity<ImageResponse> uploadCategoryImage(@RequestParam("category image") MultipartFile image, @PathVariable String categoryId) throws IOException {
-
-        log.info("Start the api method  upload Images in CategoryController : {}",image,categoryId);
-        String imageName = fileServiceI.uploadFile(image, ImageUploadPath);
-
-        CategoryDto category = categoryServiceI.getSingleCategory(categoryId);
-
-        category.setCoverImage(imageName);
-
-        CategoryDto categoryDto = categoryServiceI.updateCategory(category, categoryId);
-
-        ImageResponse imageResponse = ImageResponse.builder().imageName(imageName).success(true).status(HttpStatus.CREATED).build();
-        log.info("Completed the api method  upload Images in CategoryController : {}",image,categoryId);
-        return new ResponseEntity<>(imageResponse,HttpStatus.CREATED);
 
     }
 
