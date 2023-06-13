@@ -142,9 +142,9 @@ public class CategoryController {
 
 @GetMapping("/category/serach/{keyword}")
     public ResponseEntity<List<CategoryDto>>searchTitle(@PathVariable String keyword) {
-
+    log.info("Start the api method search Category category in CategoryController : {}",keyword);
         List<CategoryDto> categoryDtoList = this.categoryServiceI.searchCategory(keyword);
-
+    log.info("Completed the api method search Category category in CategoryController : {}",keyword);
         return new ResponseEntity<List<CategoryDto>>(categoryDtoList,HttpStatus.OK);
 
 
