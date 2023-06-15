@@ -1,6 +1,6 @@
 package com.electronicstore.exception;
 
-import com.electronicstore.Config.AppConstatnt;
+import com.electronicstore.model.AppConstatnt;
 import lombok.Getter;
 import lombok.Setter;
 

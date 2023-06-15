@@ -1,9 +1,9 @@
 package com.electronicstore.controller;
 
-import com.electronicstore.Config.ApiResponse;
-import com.electronicstore.Config.AppConstatnt;
-import com.electronicstore.Config.ImageResponse;
-import com.electronicstore.Config.PageableResponse;
+import com.electronicstore.model.ApiResponse;
+import com.electronicstore.model.AppConstatnt;
+import com.electronicstore.model.ImageResponse;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.serviceI.FileServiceI;
 import com.electronicstore.serviceI.UserServiceI;

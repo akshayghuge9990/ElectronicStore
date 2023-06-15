@@ -1,4 +1,4 @@
-package com.electronicstore.Config;
+package com.electronicstore.model;
 
 import com.electronicstore.dtos.UserDto;
 import lombok.*;

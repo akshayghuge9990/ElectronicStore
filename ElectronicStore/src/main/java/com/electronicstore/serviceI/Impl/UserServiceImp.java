@@ -1,6 +1,6 @@
 package com.electronicstore.serviceI.Impl;
 
-import com.electronicstore.Config.PageableResponse;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.entity.User;
 
@@ -74,6 +74,7 @@ public class UserServiceImp implements UserServiceI {
 
         log.info("Start the update User in UserServiceImpl: {}", userDto, userId);
         User user = this.userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException());
+        log.info(" set updated user  in UserServiceImpl: {}", userDto, userId);
         user.setName(userDto.getName());
         user.setGender(userDto.getGender());
         user.setPassword(userDto.getPassword());

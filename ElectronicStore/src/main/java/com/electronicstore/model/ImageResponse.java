@@ -1,4 +1,4 @@
-package com.electronicstore.Config;
+package com.electronicstore.model;
 
 import lombok.*;
 import org.springframework.http.HttpStatus;
