@@ -1,6 +1,6 @@
 package com.electronicstore.serviceI;
 
-import com.electronicstore.Config.PageableResponse;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.dtos.CategoryDto;
 
 import java.util.List;

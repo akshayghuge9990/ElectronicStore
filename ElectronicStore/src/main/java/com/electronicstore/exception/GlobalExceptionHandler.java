@@ -1,6 +1,6 @@
 package com.electronicstore.exception;
 
-import com.electronicstore.Config.ApiResponse;
+import com.electronicstore.model.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

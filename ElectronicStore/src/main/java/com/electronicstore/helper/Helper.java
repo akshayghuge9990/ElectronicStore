@@ -1,7 +1,6 @@
 package com.electronicstore.helper;
 
-import com.electronicstore.Config.PageableResponse;
-import org.apache.juli.logging.Log;
+import com.electronicstore.model.PageableResponse;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

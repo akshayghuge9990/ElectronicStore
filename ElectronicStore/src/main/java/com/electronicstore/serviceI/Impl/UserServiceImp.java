@@ -1,6 +1,6 @@
 package com.electronicstore.serviceI.Impl;
 
-import com.electronicstore.Config.PageableResponse;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.dtos.UserDto;
 import com.electronicstore.entity.User;
 

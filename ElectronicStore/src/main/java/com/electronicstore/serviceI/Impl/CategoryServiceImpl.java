@@ -1,7 +1,7 @@
 package com.electronicstore.serviceI.Impl;
 
-import com.electronicstore.Config.AppConstatnt;
-import com.electronicstore.Config.PageableResponse;
+import com.electronicstore.model.AppConstatnt;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.dtos.CategoryDto;
 import com.electronicstore.entity.Category;
 import com.electronicstore.exception.ResourceNotFoundException;
@@ -157,4 +157,6 @@ public class CategoryServiceImpl implements CategoryServiceI {
         log.info("Completed the search Category in CategoryServiceImpl: {}",keyword);
         return categoryDto;
     }
+
+
 }
