@@ -9,7 +9,7 @@ public class AppConstatnt {
 
     public static final String PAGE_SIZE = "5";
 
-    public static final String EXCEPTION_MESSAGE = "Resource Not Found ";
+    public static final String EXCEPTION_MESSAGE = "Resource Not Found Of Given Id";
 
     public static final String SORT_BY = "userId";
 
@@ -19,6 +19,8 @@ public class AppConstatnt {
 
     public static final String SORT_BY1 = "categoryId";
 
+    public static final String PRODUCT_DELETED = "Product deleted successfully";
 
+    public static final String SORT_BYPRODUCT ="productId";
 
 }
