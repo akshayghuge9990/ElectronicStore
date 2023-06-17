@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -36,7 +37,7 @@ public class CategoryController {
      */
 
     @PostMapping("/category")
-    public ResponseEntity<CategoryDto> createCategory(@RequestBody CategoryDto categoryDto) {
+    public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
 
         log.info("start the api method create category in CategoryController : {}", categoryDto);
         CategoryDto category = this.categoryServiceI.createCategory(categoryDto);
@@ -58,7 +59,7 @@ public class CategoryController {
      */
 
     @PutMapping("/category/{categoryId}")
-    public ResponseEntity<CategoryDto> updateCategory(@RequestBody CategoryDto categoryDto, @PathVariable String categoryId) {
+    public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto, @PathVariable String categoryId) {
 
         log.info("start the api method update category in CategoryController : {}", categoryDto, categoryId);
         CategoryDto updateCategory = this.categoryServiceI.updateCategory(categoryDto, categoryId);
@@ -135,7 +136,7 @@ public class CategoryController {
     //search
 
     /**
-     * @param keyword
+     * '@param keyword'
      * @return List<CategoryDto>
      * @author Akshay
      * @apiNote this api is  used to search Category
