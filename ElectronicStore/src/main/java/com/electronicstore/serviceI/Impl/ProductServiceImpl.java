@@ -3,16 +3,24 @@ package com.electronicstore.serviceI.Impl;
 import com.electronicstore.dtos.ProductDto;
 import com.electronicstore.entity.Product;
 import com.electronicstore.exception.ResourceNotFoundException;
+import com.electronicstore.helper.Helper;
+import com.electronicstore.model.PageableResponse;
 import com.electronicstore.repository.ProductRepo;
 import com.electronicstore.serviceI.ProductServiceI;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class ProductServiceImpl implements ProductServiceI {
 
     private static final Logger log = LoggerFactory.getLogger(ProductServiceImpl.class);
@@ -43,17 +51,17 @@ public class ProductServiceImpl implements ProductServiceI {
     }
 
     /**
-     * @author Akshay
-     * @apiNote this method is implementation of update Product
      * @param productDto
      * @param productId
      * @return ProductDto
+     * @author Akshay
+     * @apiNote this method is implementation of update Product
      */
 
     @Override
     public ProductDto update(ProductDto productDto, String productId) {
 
-        log.info("Start the  update product in ProductServiceImpl: {}", productDto,productId);
+        log.info("Start the  update product in ProductServiceImpl: {}", productDto, productId);
         Product product = productRepo.findById(productId).orElseThrow(() -> new ResourceNotFoundException());
 
         product.setTitle(productDto.getTitle());
@@ -65,94 +73,116 @@ public class ProductServiceImpl implements ProductServiceI {
         productDto.setStock(productDto.isStock());
         Product saveProduct = productRepo.save(product);
 
-        log.info("Completed the  update product in ProductServiceImpl: {}", productDto,productId);
+        log.info("Completed the  update product in ProductServiceImpl: {}", productDto, productId);
         return modelMapper.map(saveProduct, ProductDto.class);
     }
 
     /**
+     * @param pageNumber
+     * @param pageSize
+     * @param sortBy
+     * @param sortDir
+     * @return ProductDto
      * @author Akshay
-     * @apiNote this method is implementation of update Product
-     *
-     * @return List<ProductDto>
+     * @apiNote this method is implementation of get All Product
      */
 
     @Override
-    public List<ProductDto> getAllProduct() {
+    public PageableResponse<ProductDto> getAllProduct(int pageNumber, int pageSize, String sortBy, String sortDir) {
 
-        log.info("Start the  get All product in ProductServiceImpl: {}");
-        List<Product> product = productRepo.findAll();
+        log.info("Start the  get All product in ProductServiceImpl: {}", pageNumber, pageSize, sortBy, sortDir);
 
-        List<ProductDto> productDto = product.stream().map((pro) -> this.modelMapper.map(pro, ProductDto.class)).collect(Collectors.toList());
-        log.info("Completed the  get All product in ProductServiceImpl: {}");
-        return productDto;
+        Sort sort = (sortDir.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
+
+        Pageable pagable = PageRequest.of(pageNumber, pageSize, sort);
+
+        Page<Product> page = (Page<Product>) productRepo.findAll(pagable);
+
+        log.info("Completed the  get All product in ProductServiceImpl: {}", pageNumber, pageSize, sortBy, sortDir);
+        return Helper.getpagableResponse(page, ProductDto.class);
     }
 
     /**
-     *
-     * @apiNote this method is implementation of get Single Product
-     * @author Akshay
      * @param productId
      * @return ProductDto
+     * @apiNote this method is implementation of get Single Product
+     * @author Akshay
      */
 
     @Override
     public ProductDto getSingelProduct(String productId) {
-        log.info("Start the  get Single product in ProductServiceImpl: {}",productId);
+        log.info("Start the  get Single product in ProductServiceImpl: {}", productId);
 
         Product product = productRepo.findById(productId).orElseThrow(() -> new ResourceNotFoundException());
-        Product productsave = productRepo.save(product);
 
-        log.info("Completed the  get Single product in ProductServiceImpl: {}",productId);
-        return modelMapper.map(productsave, ProductDto.class);
+        log.info("Completed the  get Single product in ProductServiceImpl: {}", productId);
+        return modelMapper.map(product, ProductDto.class);
     }
 
-    /**@apiNote this method is implementation of delete Product
-     * @author Akshay
+    /**
      * @param productId
+     * @apiNote this method is implementation of delete Product
+     * @author Akshay
      */
 
     @Override
     public void deleteProduct(String productId) {
-        log.info("Start the  delete product in ProductServiceImpl: {}",productId);
+        log.info("Start the  delete product in ProductServiceImpl: {}", productId);
         Product product = productRepo.findById(productId).orElseThrow(() -> new ResourceNotFoundException());
-        log.info("Completed the  delete product in ProductServiceImpl: {}",productId);
+        log.info("Completed the  delete product in ProductServiceImpl: {}", productId);
         productRepo.delete(product);
 
     }
 
-    /**@apiNote this method is implementation of get All live Product
-     *  @author Akshay
-     * @return List<ProductDto>
+    /**
+     * @param pageNumber
+     * @param pageSize
+     * @param sortBy
+     * @param sortDir
+     * @return ProductDto
+     * @apiNote this method is implementation of get All live Product
+     * @author Akshay
      */
+
     @Override
-    public List<ProductDto> getAllLive() {
+    public PageableResponse<ProductDto> getAllLive(int pageNumber, int pageSize, String sortBy, String sortDir) {
 
-        log.info("Start the  get All Live product in ProductServiceImpl: {}");
+        log.info("Start the  get All Live product in ProductServiceImpl: {}", pageNumber, pageSize, sortBy, sortDir);
+        Sort sort = (sortDir.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
 
-        List<Product> product = productRepo.findAll();
+        Pageable pagable = PageRequest.of(pageNumber, pageSize, sort);
 
-        List<ProductDto> productDto = product.stream().map((pro) -> this.modelMapper.map(pro, ProductDto.class)).collect(Collectors.toList());
+        Page<Product> page = (Page<Product>) productRepo.findByLiveTrue(pagable);
 
-        log.info("Completed the  get All Live product in ProductServiceImpl: {}");
 
-        return productDto;
+        log.info("Completed the  get All Live product in ProductServiceImpl: {}", pageNumber, pageSize, sortBy, sortDir);
+
+        return Helper.getpagableResponse(page, ProductDto.class);
     }
 
-    /**@apiNote this method is implementation of search by Title
-     * @author Akshay
+    /**
      * @param subTitle
-     * @return List<ProductDto>
+     * @param pageNumber
+     * @param pageSize
+     * @param sortBy
+     * @param sortDir
+     * @return ProductDto
+     * @apiNote this method is implementation of search by Title
+     * @author Akshay
      */
 
     @Override
-    public List<ProductDto> searchByTitle(String subTitle) {
+    public PageableResponse<ProductDto> searchByTitle(String subTitle, int pageNumber, int pageSize, String sortBy, String sortDir) {
 
-        log.info("Start the Search By title in ProductServiceImpl: {}",subTitle);
-        List<Product> product = productRepo.findAll();
+        log.info("Start the Search By title in ProductServiceImpl: {}", subTitle, pageNumber, pageSize, sortBy, sortDir);
 
-        List<ProductDto> productDto = product.stream().map((pro) -> this.modelMapper.map(pro, ProductDto.class)).collect(Collectors.toList());
+        Sort sort = (sortDir.equalsIgnoreCase("desc")) ? (Sort.by(sortBy).descending()) : (Sort.by(sortBy).ascending());
 
-        log.info("Completed the Search By title in ProductServiceImpl: {}",subTitle);
-        return productDto;
+        Pageable pagable = PageRequest.of(pageNumber, pageSize, sort);
+
+        Page<Product> page = (Page<Product>) productRepo.findByTitleContaining(subTitle,pagable);
+
+        log.info("Completed the Search By title in ProductServiceImpl: {}", subTitle, pageNumber, pageSize, sortBy, sortDir);
+        return Helper.getpagableResponse(page,ProductDto.class);
     }
 }

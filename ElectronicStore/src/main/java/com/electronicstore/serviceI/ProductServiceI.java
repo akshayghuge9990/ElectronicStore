@@ -1,6 +1,7 @@
 package com.electronicstore.serviceI;
 
 import com.electronicstore.dtos.ProductDto;
+import com.electronicstore.model.PageableResponse;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface ProductServiceI {
 
     //getAllProduct
 
-    List<ProductDto> getAllProduct();
+    PageableResponse<ProductDto> getAllProduct(int pageNumber,int pageSize,String sortBy,String sortDir);
 
     //getSingleProduct
 
@@ -28,11 +29,11 @@ public interface ProductServiceI {
 
     //get all :live
 
-    List<ProductDto> getAllLive();
+    PageableResponse<ProductDto> getAllLive(int pageNumber,int pageSize,String sortBy,String sortDir);
 
     //search product
 
-    List<ProductDto> searchByTitle(String subTitle);
+    PageableResponse<ProductDto> searchByTitle(String subTitle,int pageNumber,int pageSize,String sortBy,String sortDir);
 
     //other methods
 

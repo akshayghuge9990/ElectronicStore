@@ -19,6 +19,8 @@ public class AppConstatnt {
 
     public static final String SORT_BY1 = "categoryId";
 
+    public static final String PRODUCT_DELETED = "Product deleted successfully";
 
+    public static final String SORT_BYPRODUCT ="productId";
 
 }
