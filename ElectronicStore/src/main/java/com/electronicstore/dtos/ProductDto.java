@@ -19,7 +19,7 @@ public class ProductDto {
     @Size(min = 3,max = 15,message = "Product Title must be min 3 char and max 15 char allwoed")
     private String title;
     @NotEmpty
-    @Size(min = 6,max = 25,message = "Product Title must be min 6 char and max 25 char allwoed")
+    @Size(min = 4,max = 25,message = "Product Title must be min 4 char and max 25 char allwoed")
     @Column(name = "PRODUCT_DESCRIPTION")
     private String description;
     @NotEmpty
@@ -32,7 +32,6 @@ public class ProductDto {
     private Date addedDate;
     @Column(name = "PRODUCT_LIVE")
     private boolean live;
-    @NotEmpty
     @Column(name = "PRODUCT_STOCK")
     private boolean stock;
 
