@@ -12,7 +12,7 @@ public interface ProductRepo extends JpaRepository<Product,String> {
     //search
     Page<Product> findByTitleContaining(String subTitle, Pageable pagable);
 
-    List<Product> findByLiveTrue(Pageable pagable);
+    Page<Product> findByLiveTrue(Pageable pagable);
 
 
 
