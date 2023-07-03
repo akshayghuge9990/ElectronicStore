@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import java.util.Optional;
+
 @SpringBootTest
 public class UserServiceImpTest {
 
@@ -26,6 +28,8 @@ public class UserServiceImpTest {
     private ModelMapper modelMapper;
 
     User user;
+
+    UserDto userDto;
 
     @BeforeEach
     public void init() {
@@ -56,6 +60,36 @@ public class UserServiceImpTest {
         //Assert
         Assertions.assertNotNull(user1);
         Assertions.assertEquals("Akshay", user1.getName());
+
+    }
+
+    @Test
+    public void updateUserTest() {
+
+        String userId = "ABCDEF";
+
+        userDto = UserDto.builder()
+                .name("Akshay Ghuge")
+                .about("This is update user about details")
+                .gender("Male")
+                .imageName("ABC.png")
+                .email("ghugesuraj123@gmail.com")
+                .build();
+
+
+        //Arrange
+        Mockito.when(userRepo.findById(Mockito.anyString())).thenReturn(Optional.of(user));
+        Mockito.when(userRepo.save(Mockito.any())).thenReturn(user);
+        //Act
+        UserDto updateUser1 = userServiceImp.updateUser(userDto, userId);
+
+        System.out.println(updateUser1.getName());
+        System.out.println(updateUser1.getImageName());
+        //Assert
+        Assertions.assertNotNull(userDto);
+        Assertions.assertEquals(userDto.getName(),updateUser1.getName());
+
+
 
     }
 
