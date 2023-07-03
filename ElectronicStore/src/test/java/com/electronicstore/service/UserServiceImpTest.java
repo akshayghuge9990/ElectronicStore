@@ -53,7 +53,7 @@ public class UserServiceImpTest {
 
         //Arrange
         Mockito.when(userRepo.save(Mockito.any())).thenReturn(user);
-        //Act
+        //Actual call
         UserDto user1 = userServiceImp.createUser(modelMapper.map(user, UserDto.class));
 
         System.out.println(user1.getName());
@@ -80,7 +80,7 @@ public class UserServiceImpTest {
         //Arrange
         Mockito.when(userRepo.findById(Mockito.anyString())).thenReturn(Optional.of(user));
         Mockito.when(userRepo.save(Mockito.any())).thenReturn(user);
-        //Act
+        //Actual call
         UserDto updateUser1 = userServiceImp.updateUser(userDto, userId);
 
         System.out.println(updateUser1.getName());
