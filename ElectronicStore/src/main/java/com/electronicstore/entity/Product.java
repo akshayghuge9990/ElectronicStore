@@ -35,4 +35,6 @@ public class Product {
     private boolean stock;
 
 
+
+
 }
