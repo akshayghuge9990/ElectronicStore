@@ -16,11 +16,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
-
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -31,9 +28,6 @@ class UserControllerTest {
     @MockBean
     private UserServiceI userServiceI;
 
-
-    @Autowired
-    private UserController userController;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -236,11 +230,27 @@ class UserControllerTest {
                 .andDo(print())
                 .andExpect(status().isOk());
 
-
     }
 
     @Test
-    void deleteUserTest() {
+    void deleteUserTest() throws Exception {
+
+       //   /api/users/{userId}+DELETE request+json
+
+        String userId="ASDFX";
+
+        userServiceI.deleteUser(userId);
+
+        this.mockMvc.perform(
+                MockMvcRequestBuilders.delete("/api/users/"+userId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                        .andDo(print())
+                .andExpect(status().isOk());
+
+
+
+
 
 
     }
@@ -269,7 +279,7 @@ class UserControllerTest {
     }
 
     @Test
-    void searchNameTest() throws Exception {
+    void searchNameTest() {
 
 
 

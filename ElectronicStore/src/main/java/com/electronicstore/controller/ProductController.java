@@ -169,7 +169,7 @@ public class ProductController {
      * @return
      */
     @GetMapping("/search/{query}")
-    public ResponseEntity<PageableResponse<ProductDto>> getAllLive(
+    public ResponseEntity<PageableResponse<ProductDto>> getAllSearch(
             @PathVariable String query,
             @RequestParam(value = "pageNumber", defaultValue = AppConstatnt.PAGE_NUMBER, required = false) Integer pageNumber,
             @RequestParam(value = "pageSize", defaultValue = AppConstatnt.PAGE_SIZE, required = false) Integer pageSize,
