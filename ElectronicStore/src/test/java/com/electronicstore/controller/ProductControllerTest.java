@@ -110,6 +110,8 @@ class ProductControllerTest {
 
     }
 
+    // Create
+
     @Test
     void createProductTest() throws Exception {
 
@@ -129,6 +131,8 @@ class ProductControllerTest {
 
             }
 
+            // Convertting one Object to JSON Format
+
     private String convertObjectTOJsonString(Object product) {
 
         try {
@@ -141,6 +145,9 @@ class ProductControllerTest {
             return null;
         }
     }
+
+    // update
+
     @Test
     void updateProductTest() throws Exception {
 
@@ -162,6 +169,8 @@ class ProductControllerTest {
                 .andExpect(jsonPath("$.title").exists());
 
     }
+
+    // Get All
 
     @Test
     void getAllProductTest() throws Exception {
@@ -188,6 +197,8 @@ class ProductControllerTest {
 
     }
 
+    //Get Single
+
     @Test
     void getSingleProduct() throws Exception {
 
@@ -207,6 +218,8 @@ class ProductControllerTest {
                 .andExpect(status().isOk());
     }
 
+    // Delete
+
     @Test
     void deleteProductTest() throws Exception {
 
@@ -224,6 +237,8 @@ class ProductControllerTest {
 
 
     }
+
+    // Get All Live
 
     @Test
     void getAllLiveTest() throws Exception {
@@ -249,6 +264,9 @@ class ProductControllerTest {
                 .andExpect(status().isOk());
 
     }
+
+    // Get All Search
+
     @Test
     void getAllSerachTest() throws Exception {
 
