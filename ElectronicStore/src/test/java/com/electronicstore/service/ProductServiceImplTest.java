@@ -189,19 +189,22 @@ class ProductServiceImplTest {
     }
 
     //search By Title
-//    @Test
-//    void searchByTitleTest() {
-//
-//        String keywords="ABCD";
-//
-//        List<Product> productList = Arrays.asList(product, product1, product2);
-//
-//        Page<Product>page=new PageImpl<>(productList);
-//
-//        Mockito.when(productRepo.findByTitleContaining((Pageable)Mockito.any())).thenReturn(page);
-//
-//
-//    }
+    @Test
+    void searchByTitleTest() {
+
+        String keywords="ABCD";
+
+        List<Product> productList = Arrays.asList(product, product1, product2);
+
+        Page<Product>page=new PageImpl<>(productList);
+
+        Mockito.when(productRepo.findByTitleContaining(Mockito.anyString(),Mockito.any())).thenReturn(page);
+
+        PageableResponse<ProductDto> productDtoPageableResponse = productService.searchByTitle("This is Mobile", 1, 2, "Title", "Ascending");
+
+
+        Assertions.assertEquals(3,productDtoPageableResponse.getContent().size());
+    }
 
 
 }
